@@ -1,0 +1,27 @@
+# community modules are available for a lot of the stuff you want to do
+# check https://registry.terraform.io/
+
+provider "aws" {
+  version = "~> 1.0.0"
+  region  = "us-east-1"
+}
+
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "1.9.1"
+
+  name = "tf-getting-started"
+  cidr = "10.0.0.0/16"
+
+  azs             = ["us-east-1c", "us-east-1d", "us-east-1e"]
+  private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
+
+  enable_nat_gateway = true
+  enable_vpn_gateway = true
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}

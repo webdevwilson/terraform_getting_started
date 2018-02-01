@@ -1,0 +1,1 @@
+from_tfvars = "Hello from tfvars!"

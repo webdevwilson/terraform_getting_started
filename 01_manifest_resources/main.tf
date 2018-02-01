@@ -1,7 +1,10 @@
 # Resources - Declare something to be managed by Terraform
+#
+# id - must be unique in a plan
+# attributes - set values on the resource
 
-# Creates file with specified contents
+# Creates file on local machine with specified contents
 resource "local_file" "foo" {
   content  = "foo"
-  filename = "barz"
+  filename = "foo"
 }

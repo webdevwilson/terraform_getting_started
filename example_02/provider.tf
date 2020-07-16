@@ -5,13 +5,13 @@
 # depending on the provider
 
 # Configure AWS provider to point to us-east-1
-provider "aws" {
+provider aws {
   version = "~> 1.0"
   region  = "us-east-1"
 }
 
-# Creates an iam role in aws
-resource "aws_iam_role" "test_role" {
+# This resource creates an iam role in aws
+resource aws_iam_role test_role {
   name_prefix        = "tf_getting_started"
   assume_role_policy = ""
 }

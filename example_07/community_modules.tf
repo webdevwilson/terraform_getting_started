@@ -1,12 +1,12 @@
-# community modules are available for a lot of the stuff you want to do
+# community modules are available for a lot of the stuff you want to build
 # check https://registry.terraform.io/
 
-provider "aws" {
+provider aws {
   version = "~> 1.0.0"
   region  = "us-east-1"
 }
 
-module "vpc" {
+module vpc {
   source  = "terraform-aws-modules/vpc/aws"
   version = "1.9.1"
 
